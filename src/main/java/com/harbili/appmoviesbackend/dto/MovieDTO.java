@@ -4,6 +4,7 @@ import lombok.Getter;
 
 import java.time.LocalDate;
 import java.util.List;
+
 @Getter
 public final class MovieDTO {
     private final Long id;
@@ -21,8 +22,6 @@ public final class MovieDTO {
         this.overview = overview;
         this.posterUrl = posterUrl;
         this.releaseDate = releaseDate;
-        this.genres = genres;
+        this.genres = genres != null ? genres : List.of(); // Initialisation safe
     }
-
-    // Getters...
 }
